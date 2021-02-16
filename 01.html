@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script>
+
+		const exp = (a, b, c) => {
+			b_square = b*b - 4*a*c
+			console.log(a, b, b_square, b_square > 0)
+			if (b_square > 0){
+				var result1 = (-b + Math.sqrt(b_square)) / 2*a
+				var result2 = (-b - Math.sqrt(b_square)) / 2*a
+				return '서로 다른 두 실근:' + result1 + ' ' + result2
+			}
+			if (b_square == 0){
+				return '중근:' + (-b/2*a)
+			}
+			if (b_square < 0){
+				return '허근'
+			}
+		}
+
+		function expression(){
+			var a = parseInt(prompt("2차 계수 값을 입력하세요."));
+			var b = parseInt(prompt("1차 계수 값을 입력하세요."));
+			var c = parseInt(prompt("상수항 값을 입력하세요."));
+
+			alert(exp(a, b, c))
+		}
+
+	</script>
+</head>
+<body>
+	<h3>2차 방정식</h3>	
+	<img src="img/01.png" alt="이미지">
+	<br/>
+	<button onclick="expression()">2차방정식 근 구하기</button>
+
+</body>
+</html>
